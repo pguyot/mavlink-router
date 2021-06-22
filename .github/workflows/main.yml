@@ -77,7 +77,11 @@ jobs:
               sudo apt-get install -y python3-pip python3-setuptools git autoconf automake libtool binutils && pip3 install future pymavlink
               ./autogen.sh && ./configure CFLAGS='-g -O2' --sysconfdir=/etc --localstatedir=/var --libdir=/usr/lib --disable-systemd --prefix=/usr
               make -j
+              ls
               cp mavlink-routerd mavlink-routerd-libc-armv6
+              ls
+      - name: install tools
+        run: ls
       - uses: actions/upload-artifact@master
         with:
           path: mavlink-routerd-libc-armv6
