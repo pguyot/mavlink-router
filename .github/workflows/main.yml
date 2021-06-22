@@ -71,6 +71,7 @@ jobs:
           submodules: recursive
       - uses: pguyot/arm-runner-action@v1
         with:
+          copy_artifact_path: mavlink-routerd
           image_additional_mb: 1024
           commands: |
               sudo apt-get install -y python3-pip python3-setuptools git autoconf automake libtool binutils && pip3 install future pymavlink
