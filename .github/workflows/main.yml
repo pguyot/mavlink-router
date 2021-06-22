@@ -71,16 +71,10 @@ jobs:
           submodules: recursive
       - uses: pguyot/arm-runner-action@v1
         with:
-          copy_artifact_path: mavlink-routerd
+          copy_artifact_path: touch mavlink-routerd-libc-armv6
           image_additional_mb: 1024
           commands: |
-              sudo apt-get install -y python3-pip python3-setuptools git autoconf automake libtool binutils && pip3 install future pymavlink
-              ./autogen.sh && ./configure CFLAGS='-g -O2' --sysconfdir=/etc --localstatedir=/var --libdir=/usr/lib --disable-systemd --prefix=/usr
-              make -j
-              ls
-              echo "potato"
-              cp mavlink-routerd mavlink-routerd-libc-armv6
-              ls
+            touch mavlink-routerd-libc-armv6
       - name: Rename
         run: echo "eita" && ls
       - uses: actions/upload-artifact@master
