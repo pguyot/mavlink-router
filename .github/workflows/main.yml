@@ -71,7 +71,7 @@ jobs:
           submodules: recursive
       - uses: pguyot/arm-runner-action@v1
         with:
-          copy_artifact_path: touch mavlink-routerd-libc-armv6
+          copy_artifact_path: mavlink-routerd-libc-armv6
           image_additional_mb: 1024
           commands: |
             touch mavlink-routerd-libc-armv6
