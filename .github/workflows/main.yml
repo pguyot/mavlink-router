@@ -62,6 +62,7 @@ jobs:
           prerelease: ${{ !startsWith(github.ref, 'refs/tags/v') }}
           overwrite: true
 
+
   arm-v6:
     name: ARM v6 binary
     runs-on: ubuntu-latest
